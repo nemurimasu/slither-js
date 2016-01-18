@@ -11,6 +11,7 @@
     create: function () {
       // configure game
       this.game.input.maxPointers = 1;
+      this.game.time.desiredFps = 30;
 
       if (this.game.device.desktop) {
         this.game.scale.pageAlignHorizontally = true;

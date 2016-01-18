@@ -86,8 +86,11 @@ gulp.task('html', function(){
 gulp.task('connect', function () {
   connect.server({
     root: [__dirname + '/src'],
-    port: 9000,
-    livereload: true
+    host: process.env.IP || 'localhost',
+    port: parseInt(process.env.PORT || '9000', 10),
+    livereload: {
+      port: parseInt(process.env.PORT || '35728', 10) + 1
+    }
   });
 });
 
